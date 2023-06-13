@@ -238,7 +238,7 @@ impl SmsRequestParams {
 #[derive(Serialize, Deserialize, Debug, Clone)]
 pub struct Response {
     #[serde(rename(deserialize = "Response"))]
-    response: ResponseSub,
+    pub response: ResponseSub,
 }
 
 impl Response {
@@ -253,27 +253,27 @@ impl Response {
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-struct ResponseSub {
+pub struct ResponseSub {
     #[serde(rename(deserialize = "SendStatusSet"))]
-    send_status_set: Vec<ResponseSubItem>,
+    pub send_status_set: Vec<ResponseSubItem>,
     #[serde(rename(deserialize = "RequestId"))]
-    request_id: String,
+    pub request_id: String,
 }
 
 #[derive(Serialize, Deserialize, Debug, Clone)]
-struct ResponseSubItem {
+pub struct ResponseSubItem {
     #[serde(rename(deserialize = "SerialNo"))]
-    seria_no: String,
+    pub seria_no: String,
     #[serde(rename(deserialize = "PhoneNumber"))]
-    phone_number: String,
+    pub phone_number: String,
     #[serde(rename(deserialize = "Fee"))]
-    fee: i64,
+    pub fee: i64,
     #[serde(rename(deserialize = "SessionContext"))]
-    session_context: String,
+    pub session_context: String,
     #[serde(rename(deserialize = "Code"))]
-    code: String,
+    pub code: String,
     #[serde(rename(deserialize = "Message"))]
-    message: String,
+    pub message: String,
     #[serde(rename(deserialize = "IsoCode"))]
-    iso_code: String,
+    pub iso_code: String,
 }
